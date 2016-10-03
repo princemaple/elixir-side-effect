@@ -2,7 +2,7 @@ defmodule SideEffect.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elixir_side_effect,
+    [app: :side_effect,
      version: "0.1.0",
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
