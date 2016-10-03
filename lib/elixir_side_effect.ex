@@ -1,0 +1,2 @@
+defmodule SideEffect do
+end
