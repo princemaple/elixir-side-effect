@@ -25,21 +25,16 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 ## Usage
 
 ```
-iex> 1
-...> |> SideEffect.side_call(2)
+iex> 1 |> SideEffect.side_call(2)
 1
 """
 
-iex> -1
-...> |> SideEffect.side_apply(&abs/1)
+iex> -1 |> SideEffect.side_apply(&abs/1)
 -1
 
-iex> 1
-...> |> SideEffect.side_apply(IO, :inspect)
+iex> 1 |> SideEffect.side_apply(IO, :inspect)
 1
 
-iex> 1
-...> |> SideEffect.side_apply(IO, :inspect, [[base: :hex]])
-...> |> List.wrap
+iex> 1 |> SideEffect.side_apply(IO, :inspect, [[base: :hex]]) |> List.wrap
 [1]
 ```
