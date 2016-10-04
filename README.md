@@ -1,6 +1,6 @@
 # SideEffect
 
-**TODO: Add description**
+simple utils for making side effect calls and return the piped-in value in pipelines
 
 ## Installation
 
@@ -22,3 +22,24 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     end
     ```
 
+## Usage
+
+```elixir
+iex> 1
+...> |> SideEffect.side_call(2)
+1
+"""
+
+iex> -1
+...> |> SideEffect.side_apply(&abs/1)
+-1
+
+iex> 1
+...> |> SideEffect.side_apply(IO, :inspect)
+1
+
+iex> 1
+...> |> SideEffect.side_apply(IO, :inspect, [[base: :hex]])
+...> |> List.wrap
+[1]
+```
