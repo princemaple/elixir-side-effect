@@ -24,7 +24,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 ## Usage
 
-```elixir
+```
 iex> 1
 ...> |> SideEffect.side_call(2)
 1
