@@ -16,14 +16,14 @@ end
 ## Usage
 
 ```
-iex> 1 |> SideEffect.side_call(MyApp.send_notification())
-1
+iex> 1 |> SideEffect.side_call(MyApp.send_notification()) |> List.wrap
+[1]
 
-iex> 1 |> SideEffect.side_apply(&MyApp.send_notification/1)
-1
+iex> 1 |> SideEffect.side_apply(&MyApp.send_notification/1) |> List.wrap
+[1]
 
-iex> 1 |> SideEffect.side_apply(IO, :inspect)
-1
+iex> 1 |> SideEffect.side_apply(IO, :inspect) |> List.wrap
+[1]
 
 iex> 1 |> SideEffect.side_apply(IO, :inspect, [[base: :hex]]) |> List.wrap
 [1]
