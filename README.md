@@ -18,7 +18,6 @@ end
 ```
 iex> 1 |> SideEffect.side_call(MyApp.send_notification())
 1
-"""
 
 iex> 1 |> SideEffect.side_apply(&MyApp.send_notification/1)
 1
