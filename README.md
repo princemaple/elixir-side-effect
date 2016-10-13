@@ -12,6 +12,35 @@ def deps do
 end
 ```
 
+## Why
+
+so instead of writing this:
+
+```elixir
+def three_transformations_with_a_side_effect(x) do
+  temp =
+    x
+    |> transform1()
+    |> transform2()
+
+  notify_someone(temp)
+
+  transform3(temp)
+end
+```
+
+I'd just write:
+
+```elixir
+def three_transformations_with_a_side_effect(x) do
+  x
+  |> transform1()
+  |> transform2()
+  |> SideEffect.side_apply(&notify_someone/1)
+  |> transform3()
+end
+```
+
 
 ## Usage
 
