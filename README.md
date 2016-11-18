@@ -65,7 +65,7 @@ end
 
 b = 2
 
-SideFeect.side_apply(b, M, :test, [1, 3, 4], 1)
+SideEffect.side_apply(b, M, :test, [1, 3, 4], 1)
 
 # prints [1,2,3,4]
 # returns 2
